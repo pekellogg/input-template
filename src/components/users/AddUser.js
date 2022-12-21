@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
 import ErrorModal from "../ui/ErrorModal";
+import Wrapper from "../helpers/Wrapper";
 import classes from "./AddUser.module.css";
 
 const AddUser = (props) => {
@@ -43,7 +44,7 @@ const AddUser = (props) => {
     };
 
     return (
-        <div>
+        <Wrapper>
             {error && (
                 <ErrorModal
                     title={error.title}
@@ -71,10 +72,12 @@ const AddUser = (props) => {
                         value={enteredAge}
                         onChange={ageChangeHandler}
                     />
-                    <Button type="submit">Add User</Button>
+                    <Button type="submit">
+                        Add User
+                    </Button>
                 </form>
             </Card>
-        </div>
+        </Wrapper>
     );
 
 };
